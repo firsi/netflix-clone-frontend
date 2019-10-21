@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  backend:{
+    baseUrl:"https://us-central1-mini-netflix-5de57.cloudfunctions.net/api"
+  }
 };
 
 /*

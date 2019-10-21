@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 
 export class MoviesService {
-    apiUrl:'https://us-central1-mini-netflix-5de57.cloudfunctions.net/api'
+    apiUrl = 'https://us-central1-mini-netflix-5de57.cloudfunctions.net/api'
     constructor(private http: HttpClient){}
     
 

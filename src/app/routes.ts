@@ -6,12 +6,15 @@ import { FavoriteMoviesComponent } from './pages/favorite-movies.component';
 import { SearchComponent } from './movies/search-movies.component';
 import { MoviesListResolver } from './movies/movies-list-resolver.service';
 import { MovieResolver } from './movies/movie-resolver.service';
+import { favoriteRouteActivator } from './movies/favorite-route-activator.service';
+
 
 export  const appRoutes: Routes = [
     
     {path:'movies/genres/:genre', component: MoviesByGenresComponent, data: {animation:'genre'}},
 
-    {path:'movies/favorites', component: FavoriteMoviesComponent, data: {animation:'favorite'}},
+    {path:'movies/favorites', component: FavoriteMoviesComponent, data: {animation:'favorite'}, 
+        canActivate:[favoriteRouteActivator]},
 
     {path:'movies/search/:searchTerm', component: SearchComponent},
 

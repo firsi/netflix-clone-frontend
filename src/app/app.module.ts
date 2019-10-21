@@ -24,6 +24,8 @@ import { SearchComponent } from './movies/search-movies.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MoviesListResolver } from './movies/movies-list-resolver.service';
 import { MovieResolver } from './movies/movie-resolver.service';
+import { favoriteRouteActivator } from './movies/favorite-route-activator.service';
+
 
 
 @NgModule({
@@ -57,7 +59,9 @@ import { MovieResolver } from './movies/movie-resolver.service';
     AuthService,
     FavoriteService,
     MoviesListResolver,
-    MovieResolver
+    MovieResolver,
+    favoriteRouteActivator,
+    
   ],
   bootstrap: [AppComponent]
 })
