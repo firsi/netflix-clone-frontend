@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.2.
 
+## Online Demo
+You can find a working demo at : https://condescending-cori-6e30bf.netlify.com/
+
+- Since I've Implemented a fake authentication:
+You can login and sign in using any credential of your choice
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
