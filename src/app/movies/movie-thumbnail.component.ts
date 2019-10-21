@@ -43,7 +43,7 @@ export class MovieThumbnailComponent {
 
   @Input() movie
 
-  constructor(private auth: AuthService, private favorite: FavoriteService){
+  constructor(public auth: AuthService, private favorite: FavoriteService){
 
   }
 
