@@ -1,0 +1,11 @@
+ {
+    "/api": {
+      "target": "https://us-central1-mini-netflix-5de57.cloudfunctions.net/api",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/api": ""
+      }
+    }
+ }

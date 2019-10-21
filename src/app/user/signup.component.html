@@ -1,0 +1,39 @@
+<div class="background-img">
+    <div class='overlay-container'>
+        <h4 class="login-label color-primary">Signup Now</h4>
+        <hr>
+    <div class="col-md-5">
+            
+      <form [formGroup]="signupForm" (ngSubmit)="signup(signupForm.value)"  autocomplete="off" novalidate>
+        <div class="form-group" >
+          <label for="email">E-mail*:</label>
+          <em class="color-primary" *ngIf="!validateEmail() && signupForm.controls.email.errors.required">Required</em>
+          <em class="color-primary" *ngIf="!validateEmail() && signupForm.controls.email.errors.pattern">Enter a valid email</em>
+           <input  formControlName="email" name="email" required id="email" type="email" class="form-control" placeholder="E-mail..." />
+          
+       </div>
+        <div class="form-group" >
+            <label for="password">Password*:</label>
+            <em class="color-primary" *ngIf="!validatePassword() && signupForm.controls.password.errors.required">Required</em>
+            <em class="color-primary" *ngIf="!validatePassword() && signupForm.controls.password.errors.minlength">Enter a minimum of 6 characters</em>
+          
+          <input  formControlName="password" name="password" required id="password" type="password" class="form-control"placeholder="Password..." />
+        </div>
+        <div class="form-group" >
+            <label for="password">Confirm Password*: </label>
+            
+            <em class="color-primary" *ngIf="!validateConfirmPassword() && signupForm.controls.confirmPassword.errors.checkPasswordMatch">Password doesn't match</em>
+
+          <input  formControlName="confirmPassword" name="confirmPassword" required id="confirmPassword" type="password" class="form-control"placeholder="Password..." />
+        </div>
+        
+       
+        <button type="submit"  [disabled]="signupForm.invalid" class="btn btn-danger mt-3 login-btn">Sign up</button>
+      </form>
+      <br />
+      <div *ngIf="loginInvalid" class="alert alert-danger">
+        <span>Invalid Login</span>
+      </div>
+    </div>
+    </div>
+    </div>

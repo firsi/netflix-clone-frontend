@@ -1,0 +1,62 @@
+<banner  [height]="'80vh'" [bannerInfo]="movie">
+    <h1  class="mb-4">{{movie.Title}}</h1>
+    <div class="movie-details mb-3">
+    <span>Rated: {{movie.Rated}}</span>
+    <span>{{movie.Year}}</span>
+    <span><i class='fa fa-star mr-1' style="color:#deb600;" ></i>{{movie.imdbRating}}</span>
+    </div>
+    <p class="language ">
+        {{movie.Language}}
+    </p>
+    <button class="btn btn-outline-default watch mr-3" type="button" disabled>
+            <i class='fa fa-play mr-3'></i>Watch</button>
+    <button *ngIf="!favorite.isUserFavorite(movie)" class="btn btn-danger" type="button" (click)="addToFavorite()">
+        <i class='fa fa-heart mr-2'></i>Add To Favorite</button>
+        <button *ngIf="favorite.isUserFavorite(movie)" class="btn btn-outline-danger" type="button" (click)="removeFromFavorite()">
+            <i class='fa fa-close mr-2'></i>Remove from Favorite</button>
+    
+</banner>
+    <section class="container">
+    <div class="snapshots ">
+        <h3 *ngIf="movie.Type === 'series'" >Season {{movie.totalSeasons}} Available Now</h3>
+        <div class="row">
+            <div class="col-md-2 col-sm-3 mb-2 mr-4 " style="padding:0;" *ngFor="let snaps of movie.Images">
+                
+                <img class="movies-pics card-img " src="{{snaps}}" alt="{{movie.Title}}"/>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5 movie-info-container">
+        <div class="col-md-9 pr-5 mr-5">
+                <h3 class="mt-5 ">Overview</h3>
+                <p class="mt-3">{{movie.Plot}}</p>
+        </div>
+        <div class="col-md-2">
+            <h3 class="mt-5 ">Genres</h3>
+            <div *ngFor="let genre of genres"><a class="genre" [routerLink]="['/movies/genres',genre]">{{genre}}</a></div>
+        </div>
+    </div>
+
+   
+    <div class="row  movie-info-container">
+            
+            <div class="col-md-6 mt-5 pr-5 mr-5">
+                    <p><strong class="others-title">Director</strong> :  {{movie.Director}}</p>
+                    <p><strong class="others-title">Writer</strong> :  {{movie.Writer}}</p>
+                    <p><strong class="others-title">Awards</strong> :  {{movie.Awards}}</p>
+            </div>
+            <div class="col-md-3 mt-5 pr-5">
+                <p><strong class="others-title">Actors</strong> :    {{movie.Actors}}</p>
+            </div>
+        </div>
+    <section>
+
+    <section class="container mb-5">
+            <h4 class="mb-4 mt-5">Popular Movies</h4>
+            <div class="row ">
+                    <div class="col-md-2 movie-container" *ngFor="let movie of popularMovies">
+                            <popular-movie-thumbnail [movie]="movie"></popular-movie-thumbnail>    
+                    </div>
+                </div>
+    </section>
+

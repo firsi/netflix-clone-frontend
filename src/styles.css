@@ -1,1 +1,98 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background-color:#202020;
+    color:#f1f1f1;
+    font-family: 'Karla', Verdana Geneva, Tahoma, sans-serif;
+    font-size:1.2rem;
+    
+}
+h1,h3,h4{
+    font-weight: 600;
+}
+.navbar-brand{
+    color:rgb(180, 2, 2);
+}
+a{
+    color: #ccc9c9;
+}
+a:hover{
+    color:#cd0c0c;
+}
+.hover{
+    color:black;
+}
+
+.navbar{
+    background-color: #161616;
+    padding: 1rem 2.3rem;
+}
+
+.dropdown-menu {
+    color: #ccc9c9;
+    background-color: #444343;    
+}
+
+.dropdown-item {
+    color: #ccc9c9;
+}
+.dropdown-item:hover {
+    color: #fff;
+    background-color: #cd0c0c;
+}
+
+.form-control {
+    color: #ccc9c9;
+    background-color: #2e2e2e;
+    border: 1px solid #525252;
+    
+}
+
+.form-control:focus {
+    color: #ccc9c9;
+    background-color: #2e2e2e;
+    border-color: #c92525;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(219, 74, 74, 0.22);
+}
+
+.btn-outline-secondary {
+    color: #ccc9c9;
+}
+
+.btn-outline-secondary:hover {
+    color: #fff;
+    background-color: #ac0000;
+    border-color: #6c757d;
+}
+
+.btn-outline-danger:hover {
+    background-color: #ac0000;
+    border: 1px solid  #ac0000;
+ }
+.background-color-primary{
+    background-color: #ac0000;
+}
+
+.color-primary{
+    color: #ac0000;
+}
+
+ .btn-danger {
+    background-color: #ac0000;
+    border: 1px solid  #ac0000;
+ }
+ .btn-danger:hover {
+    background-color: #bd0c0c;
+    border: 1px solid  #bd0c0c;
+ }
+
+.pointable{
+    cursor: pointer;
+}
+.spacing-1{
+    display:inline-block;
+    margin-left:1%;
+}
+:disabled{
+    background-color:grey;
+}
