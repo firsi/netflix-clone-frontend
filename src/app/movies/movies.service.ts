@@ -7,22 +7,22 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 
 export class MoviesService {
-
+    apiUrl:'https://us-central1-mini-netflix-5de57.cloudfunctions.net/api'
     constructor(private http: HttpClient){}
     
 
     getMovies(): Observable<any []>{
-      return this.http.get<any []>('/api/movies')
+      return this.http.get<any []>(`${this.apiUrl}/movies`)
       .pipe(catchError(this.handleError('getMovies', [])))
     }
 
     getMoviesByGenre(genre){
-      return this.http.get<any []>(`/api/movies/genres/${genre}`)
+      return this.http.get<any []>(`${this.apiUrl}/movies/genres/${genre}`)
       .pipe(catchError(this.handleError('getMoviesByGenre', [])))
     }
     
     getPopularMovies(){
-      return this.http.get<any []>(`/api/movies/all/popular`)
+      return this.http.get<any []>(`${this.apiUrl}/movies/all/popular`)
       .pipe(catchError(this.handleError('getPopularMovies', [])))
     }
 
@@ -32,7 +32,7 @@ export class MoviesService {
     }
 
     getMovie(id){
-      return this.http.get<any []>(`/api/movies/${id}`)
+      return this.http.get<any []>(`${this.apiUrl}/movies/${id}`)
       .pipe(catchError(this.handleError('getMovie', [])))
     }
    
@@ -41,12 +41,12 @@ export class MoviesService {
     }
     
     getGenre(){
-      return this.http.get<any []>(`/api/movies/all/genres`)
+      return this.http.get<any []>(`${this.apiUrl}/movies/all/genres`)
       .pipe(catchError(this.handleError('getGenres', [])))
     }
 
     searchMovies(searchTerm){
-      return this.http.get<any []>(`/api/movies/search/${searchTerm}`)
+      return this.http.get<any []>(`${this.apiUrl}/movies/search/${searchTerm}`)
       .pipe(catchError(this.handleError('searchMovies', [])))
     }
 
